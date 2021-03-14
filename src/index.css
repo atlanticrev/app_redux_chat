@@ -9,3 +9,118 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.messages-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1200px;
+  max-height: 700px;
+  overflow-y: auto;
+  margin: 40px auto 0;
+  padding: 5px;
+
+  scroll-behavior: smooth;
+}
+
+.message-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.message-group.my {
+  align-self: flex-end;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Last message in a group shows its time */
+.message-group > .message:last-child > .message__time {
+  display: block;
+}
+
+.message-group > .message:last-child > .message__avatar {
+  display: block;
+}
+
+.message {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex: none;
+  padding: 10px 20px;
+  /*min-width: 350px;*/
+  border-radius: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.message.my {
+  justify-content: flex-end;
+}
+
+.message__delete {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  cursor: pointer;
+}
+
+.message:hover > .message__delete {
+  display: block;
+}
+
+.message__text {
+  max-width: 200px;
+  overflow-wrap: break-word;
+}
+
+.message__time {
+  display: none;
+  font-weight: bold;
+}
+
+.message-group > .message > *:not(:last-child) {
+  margin-right: 10px;
+}
+
+.message:hover > .message__time {
+  display: block;
+}
+
+.message:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.message__avatar {
+  display: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+form {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+form > button {
+  padding: 20px 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form > input {
+  flex: auto;
+  padding: 20px;
+  font-size: 16px;
+}
