@@ -6,10 +6,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 .messages-area {
   display: flex;
   flex-direction: column;
@@ -24,6 +20,7 @@ code {
   scroll-behavior: smooth;
 }
 
+/* Message groups */
 .message-group {
   display: flex;
   flex-direction: column;
@@ -37,15 +34,17 @@ code {
   align-items: flex-end;
 }
 
-/* Last message in a group shows its time */
-.message-group > .message:last-child > .message__time {
-  display: block;
-}
-
+/* Last message in a group shows its time and avatar */
+.message-group > .message:last-child > .message__time,
 .message-group > .message:last-child > .message__avatar {
   display: block;
 }
 
+.message-group > .message > *:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Messages */
 .message {
   display: flex;
   flex-flow: row nowrap;
@@ -53,15 +52,19 @@ code {
   align-items: center;
   flex: none;
   padding: 10px 20px;
-  /*min-width: 350px;*/
   border-radius: 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .message.my {
   justify-content: flex-end;
 }
 
+.message:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* Message delete button */
 .message__delete {
   display: none;
   width: 20px;
@@ -75,28 +78,23 @@ code {
   display: block;
 }
 
+/* Message text */
 .message__text {
   max-width: 200px;
   overflow-wrap: break-word;
 }
 
+/* Message timestamp */
 .message__time {
   display: none;
   font-weight: bold;
-}
-
-.message-group > .message > *:not(:last-child) {
-  margin-right: 10px;
 }
 
 .message:hover > .message__time {
   display: block;
 }
 
-.message:not(:last-child) {
-  margin-bottom: 10px;
-}
-
+/* Message avatar */
 .message__avatar {
   display: none;
   border-radius: 50%;
@@ -104,7 +102,8 @@ code {
   height: 60px;
 }
 
-form {
+/* Send message form */
+.send-message-form {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -113,13 +112,13 @@ form {
   margin: 40px auto 0;
 }
 
-form > button {
+.send-message-form > button {
   padding: 20px 40px;
   font-size: 16px;
   cursor: pointer;
 }
 
-form > input {
+.send-message-form > input {
   flex: auto;
   padding: 20px;
   font-size: 16px;
