@@ -1,5 +1,5 @@
 {
-  "name": "redux_chat",
+  "name": "app_redux_chat",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
