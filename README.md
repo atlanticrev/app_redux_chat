@@ -1,3 +1,10 @@
+# Некоторые добавления
+
+* Для того чтобы ускорить работу, все стили написал
+в один файл index.css
+  
+* Есть некоторые несовпадения с дизайном (положение аватарки, положение отметки времени)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
